@@ -3,199 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototipo Avícola Zapata</title>
-    <!-- Fuentes Estratégicas -->
+    <title>Avícola Zapata | Huevos Camperos y Ovoproductos a Gran Escala</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Variables de Color (Psicología Aplicada) */
+        /* --- SISTEMA DE DISEÑO PREMIUM --- */
         :root {
-            --green-deep: #1A4D2E; /* Autoridad, Naturaleza, Confianza */
-            --cream: #F5F1E8; /* Limpieza, Organicidad */
-            --orange-action: #D4850A; /* Hambre, Urgencia, CTA */
+            --green-deep: #152E1B; /* Autoridad extrema */
+            --green-accent: #1A4D2E; 
+            --cream: #FAF8F4; /* Limpieza orgánica */
+            --orange-action: #D4850A; /* Hambre, CTR, Acción */
+            --orange-hover: #B8720A;
             --text-dark: #1a1a1a;
+            --text-light: #f5f5f5;
+            --grey: #555555;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Lora', serif; background-color: var(--cream); color: var(--text-dark); line-height: 1.6; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 
-        body {
-            font-family: 'Lora', serif;
-            background-color: var(--cream);
-            color: var(--text-dark);
-        }
-
-        /* HEADER DE LUJO */
+        /* --- HEADER FIJO --- */
         header {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(21, 46, 27, 0.95); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            display: flex; justify-content: space-between; align-items: center; padding: 15px 5%;
         }
+        .logo-img { height: 50px; filter: brightness(0) invert(1); } /* Logo blanco para contraste */
+        nav a { color: var(--cream); text-decoration: none; margin-left: 25px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: var(--orange-action); }
+        .nav-cta { background: var(--orange-action); padding: 8px 16px !important; border-radius: 4px; color: white !important; }
+        .nav-cta:hover { background: var(--orange-hover) !important; }
 
-        .logo-img {
-            height: 60px;
-            background-color: white;
-            padding: 5px;
-            border-radius: 4px; /* Toque moderno sutil */
-        }
-
-        /* HERO SECTION (Conversión Máxima) */
+        /* --- HERO SECTION --- */
         .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            background-image: linear-gradient(rgba(26, 77, 46, 0.7), rgba(0, 0, 0, 0.8)), url('https://www.avicolazapata.com/img/slider1.jpg');
-            background-size: cover;
-            background-position: center;
+            margin-top: 80px; /* Compensar header fijo */
+            height: calc(100vh - 80px); display: flex; align-items: center;
+            background: linear-gradient(rgba(21, 46, 27, 0.75), rgba(0, 0, 0, 0.85)), url('https://www.avicolazapata.com/img/slider1.jpg');
+            background-size: cover; background-position: center; color: white;
         }
+        .hero-tag { display: inline-block; background: var(--orange-action); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; padding: 5px 12px; border-radius: 2px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 35px; opacity: 0.9; font-style: italic; }
+        
+        .btn { display: inline-block; padding: 16px 32px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; text-decoration: none; border-radius: 4px; transition: all 0.3s ease; cursor: pointer; border: none; text-align: center; }
+        .btn-primary { background: var(--orange-action); color: white; box-shadow: 0 4px 15px rgba(212, 133, 10, 0.4); }
+        .btn-primary:hover { background: var(--orange-hover); transform: translateY(-2px); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; margin-left: 15px; }
+        .btn-secondary:hover { background: white; color: var(--green-deep); }
 
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-            width: 100%;
-        }
+        /* --- SECCIÓN DOLOR / PROBLEMA --- */
+        .pain-section { background: var(--green-deep); color: white; padding: 100px 0; text-align: center; }
+        .pain-section h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .pain-section p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; opacity: 0.8; }
+        .highlight { color: var(--orange-action); font-weight: 700; font-style: normal; }
 
-        .hero-tag {
-            display: inline-block;
-            background-color: var(--orange-action);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 5px 12px;
-            border-radius: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        /* --- SOLUCIÓN / PRODUCTOS --- */
+        .products-section { padding: 100px 0; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 60px; color: var(--green-deep); }
+        .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .product-img { border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .product-content h3 { font-size: 1.8rem; color: var(--green-deep); margin-bottom: 15px; }
+        .product-content p { color: var(--grey); margin-bottom: 25px; font-size: 1.05rem; }
+        .list-check { list-style: none; margin-bottom: 30px; }
+        .list-check li { padding-left: 30px; position: relative; margin-bottom: 10px; color: var(--grey); }
+        .list-check li::before { content: '✓'; position: absolute; left: 0; color: var(--orange-action); font-weight: bold; font-family: 'Montserrat', sans-serif; }
 
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            color: white;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
+        /* --- PRUEBA SOCIAL / INSTALACIONES (EL MATADOR DE OBJECIONES) --- */
+        .trust-section { background: var(--cream); padding: 100px 0; border-top: 1px solid #eaeaea; }
+        .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .trust-card { position: relative; overflow: hidden; border-radius: 8px; height: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .trust-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .trust-card:hover img { transform: scale(1.05); }
+        .trust-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(21, 46, 27, 0.9)); padding: 20px; color: white; }
+        .trust-overlay h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .trust-overlay p { font-size: 0.85rem; opacity: 0.8; }
+        .badge-ministry { display: inline-block; background: white; color: var(--green-deep); font-size: 0.7rem; padding: 3px 8px; border-radius: 20px; font-weight: 700; margin-top: 8px; font-family: 'Montserrat', sans-serif; }
 
-        .hero p {
-            color: var(--cream);
-            font-size: 1.25rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
+        /* --- FAQ --- */
+        .faq-section { background: white; padding: 100px 0; }
+        .faq-item { border-bottom: 1px solid #eee; padding: 20px 0; }
+        .faq-question { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--green-deep); }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--orange-action); transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { content: '-'; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; color: var(--grey); margin-top: 10px; }
+        .faq-item.active .faq-answer { max-height: 200px; }
 
-        .cta-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+        /* --- CONVERSIÓN FINAL --- */
+        .conversion-section { background: var(--green-deep); color: white; padding: 100px 0; }
+        .conversion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .conversion-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .conversion-content p { opacity: 0.8; margin-bottom: 30px; font-size: 1.1rem; }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+        .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 15px; border: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; font-family: 'Lora', serif; font-size: 1rem; border-radius: 4px; outline: none; transition: border 0.3s; }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--orange-action); }
+        .contact-form select option { background: var(--green-deep); }
+        .contact-form .btn-primary { width: 100%; font-size: 1.2rem; padding: 20px; border: none; }
 
-        /* BOTONES PSICOLÓGICOS */
-        .btn {
-            display: inline-block;
-            padding: 18px 35px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
+        /* --- FOOTER --- */
+        footer { background: #0a1a0f; color: rgba(255,255,255,0.5); text-align: center; padding: 30px 5%; font-size: 0.9rem; }
 
-        .btn-primary {
-            background-color: var(--orange-action);
-            color: white;
-            box-shadow: 0 4px 15px rgba(212, 133, 10, 0.4);
-        }
-
-        .btn-primary:hover {
-            background-color: #b8720a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 133, 10, 0.6);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--green-deep);
-        }
-
-        /* BARRA MÓVIL FIJA (Captura de leads por teléfono) */
-        .mobile-sticky-bar {
-            display: none; /* Oculto en desktop */
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: var(--orange-action);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
-            z-index: 100;
-            text-decoration: none;
-        }
-
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .mobile-sticky-bar {
-                display: block;
-            }
-            /* Ajuste para que el texto no quede debajo de la barra fija */
-            .hero {
-                padding-bottom: 60px;
-            }
+            nav { display: none; } /* Simplificado para prototipo móvil */
+            .products-grid, .conversion-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr 1fr; }
+            .hero { text-align: center; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .btn-secondary { margin-left: 0; margin-top: 15px; }
+            .conversion-section { padding: 60px 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Logo (Limpio y prominente) -->
+    <!-- HEADER FIJO DE CONVERSIÓN -->
     <header>
-        <img src="https://www.avicolazapata.com/img/logo_zapata.jpg" alt="Avícola Zapata Logo" class="logo-img">
+        <img src="https://www.avicolazapata.com/img/logo_zapata.jpg" alt="Logo Avícola Zapata" class="logo-img">
+        <nav>
+            <a href="#productos">Productos</a>
+            <a href="#instalaciones">Instalaciones</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto" class="nav-cta">Catálogo B2B</a>
+        </nav>
     </header>
 
-    <!-- Sección Principal de Conversión -->
+    <!-- 1. HERO (TOFU - Atención) -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">Líderes en Huevos Camperos</span>
+        <div class="container">
+            <span class="hero-tag">Líderes en Huevos Camperos e Industriales</span>
             <h1>Calidad Industrial.<br>Origen Natural.</h1>
-            <p>Ovoproductos y huevos camperos a gran escala para la industria alimentaria. Trazabilidad y salud garantizadas por el Ministerio de Salud.</p>
-            
-            <div class="cta-group">
+            <p>Ovoproductos y huevos camperos a gran escala para la industria alimentaria. Trazabilidad y bienestar animal garantizados.</p>
+            <div>
                 <a href="#contacto" class="btn btn-primary">Solicitar Catálogo Mayorista</a>
                 <a href="#instalaciones" class="btn btn-secondary">Ver Instalaciones</a>
             </div>
         </div>
     </section>
 
-    <!-- Red de seguridad para usuarios móviles -->
-    <a href="tel:+34900000000" class="mobile-sticky-bar">
-        📞 Llamar a Departamento Comercial
-    </a>
+    <!-- 2. PROBLEMA (Agitación del Dolor B2B) -->
+    <section class="pain-section">
+        <div class="container">
+            <h2>En la industria alimentaria, no hay margen para errores.</h2>
+            <p>Los distribuidores y fabricantes necesitan un proveedor que no solo entregue volumen, sino que garantice la <span class="highlight">trazabilidad total</span>, el cumplimiento normativo estricto y una cadena de suministro ininterrumpida. Cualquier fallo en la calidad del huevo afecta directamente a su marca.</p>
+        </div>
+    </section>
 
+    <!-- 3. SOLUCIÓN Y PRODUCTOS (MOFU - Beneficios) -->
+    <section class="products-section" id="productos">
+        <div class="container">
+            <h2 class="section-title">Soluciones a Medida para su Negocio</h2>
+            
+            <div class="products-grid">
+                <div>
+                    <img src="https://www.avicolazapata.com/img/slider3.jpg" alt="Huevos Camperos Premium" class="product-img">
+                </div>
+                <div class="product-content">
+                    <h3>Huevos Camperos Premium</h3>
+                    <p>Para supermercados, hoteles y restaurantes que no negocian con la calidad y buscan un producto diferenciado, respaldado por el bienestar animal.</p>
+                    <ul class="list-check">
+                        <li>Alimentación 100% natural controlada</li>
+                        <li>Código de trazabilidad por unidad</li>
+                        <li>Packaging resistente para logística</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Pedir Precios por Volumen</a>
+                </div>
+            </div>
+
+            <div class="products-grid" style="margin-top: 80px; direction: rtl;">
+                <div style="direction: ltr;">
+                    <img src="https://www.avicolazapata.com/galeria/empresa/01_5.jpg" alt="Ovoproductos Industriales" class="product-img">
+                </div>
+                <div class="product-content" style="direction: ltr;">
+                    <h3>Ovoproductos para Industria</h3>
+                    <p>Ingredientes de base ovácea listos para su línea de producción. Deshidratados o líquidos, con medidas exactas de seguridad alimentaria.</p>
+                    <ul class="list-check">
+                        <li>Homogeneización perfecta</li>
+                        <li>Pasteurización certificada</li>
+                        <li>Logística adaptada a temperaturas de conservación</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Ficha Técnica de Productos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PRUEBA SOCIAL / INSTALACIONES (Trust Visual) -->
+    <section class="trust-section" id="instalaciones">
+        <div class="container">
+            <h2 class="section-title">Infraestructura que Garantiza su Tranquilidad</h2>
+            <p style="text-align: center; margin-top: -40px; margin-bottom: 60px; color: var(--grey); max-width: 700px; margin-left: auto; margin-right: auto;">Nuestras instalaciones cumplen las normativas más exigentes del Ministerio de Salud. No tenemos que pedir confianza, la mostramos.</p>
+            
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <img src="https://www.avicolazapata.com/galeria/empresa/01_10.jpg" alt="Control de calidad" loading="lazy">
+                    <div class="trust-overlay">
+                        <h4>Control de Calidad</h4>
+                        <p>Laboratorios propios para análisis diario.</p>
+                        <span class="badge-ministry">Cert. Ministerio de Salud</span>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <img src="https://www.avicolazapata.com/galeria/empresa/01_14.jpg" alt="Naves camperas" loading="lazy">
+                    <div class="trust-overlay">
+                        <h4>Avicultura Campera</h4>
+                        <p>Espacios abiertos que cumplen la normativa europea.</p>
+                        <span class="badge-ministry">Cert. Bienestar Animal</span>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <img src="https://www.avicolazapata.com/galeria/empresa/01_22.jpg" alt="Cadena de frío" loading="lazy">
+                    <div class="trust-overlay">
+                        <h4>Logística y Frío</h4>
+                        <p>Flota propia con control continuo de temperatura.</p>
+                        <span class="badge-ministry">Cert. ISO Frío</span>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <img src="https://www.avicolazapata.com/galeria/empresa/01_24.jpg" alt="Clasificación automática" loading="lazy">
+                    <div class="trust-overlay">
+                        <h4>Clasificación Automatizada</h4>
+                        <p>Sistemas ópticos para descarte de defectos.</p>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <img src="https://www.avicolazapata.com/galeria/empresa/01_25.jpg" alt="Empaquetado industrial" loading="lazy">
+                    <div class="trust-overlay">
+                        <h4>Envasado Industrial</h4>
+                        <p>Líneas de envasado adaptadas a grandes distribuidores.</p>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <img src="https://www.avicolazapata.com/galeria/empresa/01_15.jpg" alt="Materias primas" loading="lazy">
+                    <div class="trust-overlay">
+                        <h4>Alimentación Controlada</h4>
+                        <p>Selección de materias primas de máxima calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ (Manejo de Objeciones) -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Resolvemos sus Dudas Comerciales</h2>
+            
+            <div class="faq-item active">
+                <div class="faq-question">¿Cuál es el volumen mínimo de pedido para distribuidores?</div>
+                <div class="faq-answer" style="max-height: 200px;">Trabajamos con escalables adaptables. Para pedidos menoristas podemos gestionarlos a través de nuestro departamento comercial, pero nuestra infraestructura está optimizada para suministros continuos a nivel de pallet para supermercados e industria.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo garantizan la trazabilidad del huevo campero?</div>
+                <div class="faq-answer">Cada lote lleva un código de trazabilidad impreso en el envase que permite rastrear el lote hasta la nave exacta de origen, la fecha de puesta y los controles veterinarios aplicados, cumpliendo la normativa vigente.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Realizan envíos a toda la península o solo es local?</div>
+                <div class="faq-answer">Contamos con una flota de transporte refrigerado propia que gestiona rutas a nivel nacional. Para grandes volúmenes industriales outside de nuestras rutas habituales, coordinamos logística con proveedores frigoríficos de confianza.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONVERSIÓN FINAL (BOFU) -->
+    <section class="conversion-section" id="contacto">
+        <div class="container">
+            <div class="conversion-grid">
+                <div class="conversion-content">
+                    <h2>Asegure su cadena de suministro hoy</h2>
+                    <p>Hable con nuestro departamento comercial. Le enviaremos un catálogo técnico con precios por volumen, fichas de seguridad alimentaria y condiciones de logística en menos de 24 horas.</p>
+                    <ul class="list-check" style="color: white;">
+                        <li style="color: rgba(255,255,255,0.8);">Respuesta en menos de 24 horas</li>
+                        <li style="color: rgba(255,255,255,0.8);">Fichas técnicas y precios B2B sin compromiso</li>
+                        <li style="color: rgba(255,255,255,0.8);">Posibilidad de visita a las instalaciones</li>
+                    </ul>
+                </div>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Formulario enviado (Prototipo de Victoria)');">
+                    <input type="text" placeholder="Nombre y Apellidos *" required>
+                    <input type="text" placeholder="Empresa / Distribuidora *" required>
+                    <input type="email" placeholder="Correo Electrónico Corporativo *" required>
+                    <select required>
+                        <option value="" disabled selected>¿Qué producto le interesa?</option>
+                        <option>Huevos Camperos (Supermercados/Horeca)</option>
+                        <option>Ovoproductos (Industria Alimentaria)</option>
+                        <option>Ambas líneas</option>
+                    </select>
+                    <textarea rows="3" placeholder="Cuéntenos sobre sus necesidades de volumen..."></textarea>
+                    <button type="submit" class="btn btn-primary">Solicitar Catálogo y Precios B2B</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Granja Avícola Zapata. Todos los derechos reservados. | Diseño Estratégico propuesto por Victoria.</p>
+    </footer>
+
+    <!-- JS MÍNIMO PARA EL FAQ (Sin librerías externas para máxima velocidad) -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
