@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo Avícola Zapata</title>
+    <!-- Fuentes Estratégicas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Variables de Color (Psicología Aplicada) */
+        :root {
+            --green-deep: #1A4D2E; /* Autoridad, Naturaleza, Confianza */
+            --cream: #F5F1E8; /* Limpieza, Organicidad */
+            --orange-action: #D4850A; /* Hambre, Urgencia, CTA */
+            --text-dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+        }
+
+        /* HEADER DE LUJO */
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo-img {
+            height: 60px;
+            background-color: white;
+            padding: 5px;
+            border-radius: 4px; /* Toque moderno sutil */
+        }
+
+        /* HERO SECTION (Conversión Máxima) */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(rgba(26, 77, 46, 0.7), rgba(0, 0, 0, 0.8)), url('https://www.avicolazapata.com/img/slider1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--orange-action);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: var(--cream);
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* BOTONES PSICOLÓGICOS */
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--orange-action);
+            color: white;
+            box-shadow: 0 4px 15px rgba(212, 133, 10, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #b8720a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 133, 10, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--green-deep);
+        }
+
+        /* BARRA MÓVIL FIJA (Captura de leads por teléfono) */
+        .mobile-sticky-bar {
+            display: none; /* Oculto en desktop */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--orange-action);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-sticky-bar {
+                display: block;
+            }
+            /* Ajuste para que el texto no quede debajo de la barra fija */
+            .hero {
+                padding-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo (Limpio y prominente) -->
+    <header>
+        <img src="https://www.avicolazapata.com/img/logo_zapata.jpg" alt="Avícola Zapata Logo" class="logo-img">
+    </header>
+
+    <!-- Sección Principal de Conversión -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Líderes en Huevos Camperos</span>
+            <h1>Calidad Industrial.<br>Origen Natural.</h1>
+            <p>Ovoproductos y huevos camperos a gran escala para la industria alimentaria. Trazabilidad y salud garantizadas por el Ministerio de Salud.</p>
+            
+            <div class="cta-group">
+                <a href="#contacto" class="btn btn-primary">Solicitar Catálogo Mayorista</a>
+                <a href="#instalaciones" class="btn btn-secondary">Ver Instalaciones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Red de seguridad para usuarios móviles -->
+    <a href="tel:+34900000000" class="mobile-sticky-bar">
+        📞 Llamar a Departamento Comercial
+    </a>
+
+</body>
+</html>
